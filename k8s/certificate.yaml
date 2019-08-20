@@ -1,0 +1,20 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: tmp-appme-cloud-com-tls
+spec:
+  secretName: tmp-appme-cloud-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: tmp.appme-cloud.com
+  dnsNames:
+    - tmp.appme-cloud.com
+    - www.tmp.appme-cloud.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - tmp.appme-cloud.com
+          - www.tmp.appme-cloud.com
