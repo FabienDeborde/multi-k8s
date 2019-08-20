@@ -14,7 +14,7 @@ before_install:
   - gcloud config set project finewerk-1539239126935 # Run this command in Cloud Shell too
   - gcloud config set compute/zone asia-northeast1-a # Run this command in Cloud Shell too
   - gcloud container clusters get-credentials multi-cluster # Run this command in Cloud Shell too
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin #
   - docker build -t fabiendev/react-test -f ./client/Dockerfile.dev ./client
 script:
   - docker run -e CI=true fabiendev/react-test npm run test
