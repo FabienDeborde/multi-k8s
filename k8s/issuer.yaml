@@ -5,7 +5,7 @@ metadata:
 spec:
   acme:
     server: https://acme-v02.api.letsencrypt.org/directory
-    email: 'd-fabien@finewerk.co.jp'
+    email: d-fabien@finewerk.co.jp
     privateKeySecretRef:
       name: letsencrypt-prod
     http01: {}
